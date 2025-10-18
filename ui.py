@@ -21,7 +21,7 @@ class PPTApp(ctk.CTk):
         super().__init__()
         # Ventana
         self.title("Piedra, Papel o Tijera")
-        self.geometry("1150x720")
+        self.geometry("1150x620")
         self.resizable(False, False)
 
         # ====== Estado (solo UI) ======
@@ -108,7 +108,7 @@ class PPTApp(ctk.CTk):
 
         self.card_jugador, self.lbl_val_jug = score_card(self.frame_scores, "Jugador")
         self.card_empates, self.lbl_val_emp = score_card(self.frame_scores, "Empates")
-        self.card_cpu,     self.lbl_val_cpu = score_card(self.frame_scores, "CPU")
+        self.card_cpu,     self.lbl_val_cpu = score_card(self.frame_scores, "Máquina")
 
         self.card_jugador.grid(row=0, column=0, padx=10, pady=8, sticky="nsew")
         self.card_empates.grid(row=0, column=1, padx=10, pady=8, sticky="nsew")
@@ -146,7 +146,7 @@ class PPTApp(ctk.CTk):
         self.panel_cpu.grid(row=0, column=2, padx=10, pady=10, sticky="nsew")
 
         self.lbl_jug = ctk.CTkLabel(self.panel_jugador, text="Jugador\n—", justify="center", font=("", 16, "bold"))
-        self.lbl_cpu = ctk.CTkLabel(self.panel_cpu, text="CPU\n—", justify="center", font=("", 16, "bold"))
+        self.lbl_cpu = ctk.CTkLabel(self.panel_cpu, text="Máquina\n—", justify="center", font=("", 16, "bold"))
         self.lbl_jug.pack(expand=True, fill="both", padx=8, pady=8)
         self.lbl_cpu.pack(expand=True, fill="both", padx=8, pady=8)
 
@@ -209,7 +209,7 @@ class PPTApp(ctk.CTk):
 
         # Mostrar elecciones
         self.lbl_jug.configure(text=f"Jugador\n{eleccion_jugador.capitalize()}")
-        self.lbl_cpu.configure(text=f"CPU\n{eleccion_cpu.capitalize()}")
+        self.lbl_cpu.configure(text=f"Máquina\n{eleccion_cpu.capitalize()}")
         self.lbl_ronda.configure(text=f"Ronda {self.ronda}")
 
         # Mostrar resultado + color
@@ -231,9 +231,4 @@ class PPTApp(ctk.CTk):
         # restaura texto y color por defecto
         self.lbl_resultado.configure(text="Esperando jugada...", text_color=self._resultado_color_default)
         self.lbl_jug.configure(text="Jugador\n—")
-        self.lbl_cpu.configure(text="CPU\n—")
-
-
-if __name__ == "__main__":
-    app = PPTApp()
-    app.mainloop()
+        self.lbl_cpu.configure(text="Máquina\n—")
