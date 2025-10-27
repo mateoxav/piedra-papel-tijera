@@ -24,13 +24,13 @@ Simular el juego *Piedra–Papel–Tijera*. El jugador elige su jugada, la máqu
 /recursos/
   tema.json               # tema con los colores para la UI
   piedra.png, papel.png, tijera.png
-core.py                   # reglas + orquestación (resolver_resultado, jugar_ronda)
+core.py                   # reglas + orquestación
 rng.py                    # jugada aleatoria de la CPU
-marcador.py               # estado del marcador (nombres solicitados)
-ui.py                     # interfaz gráfica (CustomTkinter)
-main.py                   # punto de entrada (lanza la UI)
-demo_cli.py               # demo por consola (opcional)
-check_uniformidad.py      # verificación simple del RNG (opcional)
+marcador.py               # estado del marcador
+ui.py                     # interfaz gráfica 
+main.py                   # punto de entrada 
+demo_cli.py               # demo por consola 
+check_uniformidad.py      # verificación simple del RNG 
 README.md
 ```
 
